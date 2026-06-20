@@ -3,7 +3,6 @@ from pathlib import Path
 from flask import Flask, jsonify, render_template, request
 
 from .campus_graph import CampusGraph, GraphError
-from .nominatim import NominatimError, search_places
 
 
 def create_app(test_config=None):
@@ -51,18 +50,5 @@ def create_app(test_config=None):
             return jsonify({"error": str(exc)}), 400
 
         return jsonify(result)
-
-    @app.get("/api/search")
-    def search():
-        query = request.args.get("q", "").strip()
-        if len(query) < 3:
-            return jsonify({"results": []})
-
-        try:
-            results = search_places(query)
-        except NominatimError as exc:
-            return jsonify({"error": str(exc)}), 502
-
-        return jsonify({"results": results})
 
     return app

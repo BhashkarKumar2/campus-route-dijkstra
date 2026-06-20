@@ -1,8 +1,8 @@
 # Campus Route Finder with Dijkstra
 
-Python web app for finding the shortest-time route between campus locations. It uses OpenStreetMap tiles for the map, optional Nominatim search for place lookup, and a local campus graph for routing so the Dijkstra algorithm is visible and testable.
+Python web app for finding the shortest-time route between DTU campus locations. It uses OpenStreetMap tiles for the map and a local campus graph for routing, so the Dijkstra algorithm is visible and testable.
 
-The bundled sample is centered on Delhi Technological University. Replace `data/campus_graph.json` with your own college nodes and walking connections before final submission if DTU is not your campus.
+The bundled sample is centered on Delhi Technological University and the map is locked to the DTU campus bounding box.
 
 ## Features
 
@@ -10,10 +10,10 @@ The bundled sample is centered on Delhi Technological University. Replace `data/
 - Edge costs are computed from node latitude/longitude using the haversine formula.
 - Walking, fast-walking, and cycling speed profiles.
 - Leaflet map with OpenStreetMap tiles and visible attribution.
+- Map panning is constrained to the DTU campus area.
 - Route summary with time, distance, stops, and per-edge steps.
 - Dijkstra trace showing settled nodes and relaxed distances.
 - Node Builder for collecting coordinates from map clicks.
-- Nominatim-powered place search with a server-side user agent and 1 request per second throttle.
 - Render, Vercel, and Procfile deployment metadata.
 
 ## Run locally
@@ -33,7 +33,7 @@ Open `http://127.0.0.1:5000`.
 pytest
 ```
 
-## Customize for your college
+## Customize DTU nodes
 
 Edit `data/campus_graph.json`.
 
@@ -62,14 +62,21 @@ Each edge connects two nodes:
 
 If `distance_m` is omitted, the app computes distance from coordinates. Increase `walk_factor` for crowded, steep, or slow paths.
 
-You can collect coordinates in two ways:
+Use the Node Builder pin button in the UI and click on the map to collect coordinates inside DTU.
 
-1. Use the Node Builder pin button in the UI and click on the map.
-2. Use Nominatim from the command line:
+## Map data freshness
 
-```powershell
-python scripts/geocode_locations.py "Your College Library" "Your College Main Gate"
-```
+The app uses live OpenStreetMap tiles, but the campus graph is local JSON so the Dijkstra demo remains deterministic.
+
+Latest map audit:
+
+- Checked Overpass OSM database snapshot: `2026-06-20T15:22:58Z`.
+- DTU campus OSM way: `111212532`.
+- DTU campus OSM way version: `23`.
+- DTU campus OSM way last edited: `2024-07-22T15:42:07Z`.
+- Changeset: `154269396`.
+
+This means the OpenStreetMap service queried by the project was current on June 20, 2026, but the main DTU campus boundary feature itself has not been edited since July 22, 2024. If some buildings, paths, or labels look old, update those OpenStreetMap features or adjust `data/campus_graph.json` manually for the project demo.
 
 ## Dijkstra explanation
 
@@ -98,7 +105,7 @@ Vercel:
 
 - Leaflet: browser map rendering. See https://leafletjs.com/examples/quick-start/
 - OpenStreetMap public tile server: map tiles for a small student demo. See https://operations.osmfoundation.org/policies/tiles/
-- Nominatim: optional geocoding search. See https://operations.osmfoundation.org/policies/nominatim/
 - Overpass API: used once to seed the sample DTU coordinates. See https://wiki.openstreetmap.org/wiki/Overpass_API
+- OSM API: used to audit the DTU campus way metadata. See https://api.openstreetmap.org/api/0.6/way/111212532.json
 
 For production or heavy usage, use a hosted map provider plan or self-host the relevant OpenStreetMap services. Public OpenStreetMap services have usage policies and attribution requirements.

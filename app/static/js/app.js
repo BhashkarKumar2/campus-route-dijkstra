@@ -4,7 +4,6 @@ const state = {
   markers: new Map(),
   graphLayer: null,
   routeLayer: null,
-  searchMarker: null,
   captureMarker: null,
   captureMode: false,
   selectedProfile: "walk",
@@ -44,9 +43,13 @@ async function loadGraph() {
 function setupMap() {
   const center = window.CAMPUS_META.center || { lat: 28.7508153, lng: 77.1162765 };
   const zoom = window.CAMPUS_META.zoom || 16;
+  const campusBounds = getCampusBounds();
   state.map = L.map("map", {
     zoomControl: false,
     preferCanvas: true,
+    minZoom: 15,
+    maxBounds: campusBounds,
+    maxBoundsViscosity: 1.0,
   }).setView([center.lat, center.lng], zoom);
 
   L.control.zoom({ position: "bottomright" }).addTo(state.map);
@@ -118,12 +121,6 @@ function bindControls() {
   document.querySelector("#copyNodeButton").addEventListener("click", copyNodeJson);
   document.querySelector("#downloadGraphButton").addEventListener("click", downloadGraph);
   document.querySelector("#copyTraceButton").addEventListener("click", copyTrace);
-  document.querySelector("#searchButton").addEventListener("click", searchPlace);
-  document.querySelector("#placeSearch").addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-      searchPlace();
-    }
-  });
 
   for (const button of document.querySelectorAll(".segment")) {
     button.addEventListener("click", () => {
@@ -237,8 +234,7 @@ function toggleGraph() {
 }
 
 function fitToGraph() {
-  const latLngs = state.graph.nodes.map((node) => [node.lat, node.lng]);
-  state.map.fitBounds(L.latLngBounds(latLngs), { padding: [38, 38] });
+  state.map.fitBounds(getCampusBounds(), { padding: [16, 16] });
 }
 
 function toggleCaptureMode() {
@@ -273,41 +269,6 @@ function handleMapClick(event) {
     category: "custom",
   };
   document.querySelector("#nodeOutput").textContent = JSON.stringify(node, null, 2);
-}
-
-async function searchPlace() {
-  const input = document.querySelector("#placeSearch");
-  const status = document.querySelector("#searchStatus");
-  const query = input.value.trim();
-  if (query.length < 3) {
-    status.textContent = "Enter at least 3 characters.";
-    return;
-  }
-
-  status.textContent = "Searching...";
-  const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
-  const payload = await response.json();
-
-  if (!response.ok || payload.error) {
-    status.textContent = payload.error || "Search failed.";
-    return;
-  }
-
-  if (!payload.results.length) {
-    status.textContent = "No results found.";
-    return;
-  }
-
-  const result = payload.results[0];
-  status.textContent = result.display_name;
-  state.map.setView([result.lat, result.lng], 17);
-
-  if (state.searchMarker) {
-    state.searchMarker.remove();
-  }
-
-  state.searchMarker = L.marker([result.lat, result.lng]).addTo(state.map);
-  state.searchMarker.bindPopup(`<strong>${escapeHtml(result.name)}</strong><br>${escapeHtml(result.display_name)}`).openPopup();
 }
 
 async function copyNodeJson() {
@@ -345,6 +306,19 @@ function formatDistance(meters) {
     return `${(meters / 1000).toFixed(2)} km`;
   }
   return `${Math.round(meters)} m`;
+}
+
+function getCampusBounds() {
+  const bounds = window.CAMPUS_META.bounds;
+  if (bounds) {
+    return L.latLngBounds(
+      [bounds.south, bounds.west],
+      [bounds.north, bounds.east],
+    );
+  }
+
+  const latLngs = state.graph.nodes.map((node) => [node.lat, node.lng]);
+  return L.latLngBounds(latLngs).pad(0.15);
 }
 
 function formatNullableTime(value) {

@@ -5,8 +5,21 @@
       "lat": 28.7508153,
       "lng": 77.1162765
     },
+    "bounds": {
+      "south": 28.7447185,
+      "west": 77.1098886,
+      "north": 28.7552963,
+      "east": 77.1230053
+    },
     "zoom": 16,
-    "source_note": "Node coordinates are based on OpenStreetMap data retrieved through Nominatim and Overpass on 2026-06-20. Edit this file for your actual college before final submission.",
+    "source_note": "Node coordinates are based on OpenStreetMap data retrieved through Overpass on 2026-06-20. The map is locked to the DTU campus bounding box.",
+    "map_data_audit": {
+      "checked_at": "2026-06-20T15:22:58Z",
+      "osm_way_id": 111212532,
+      "osm_way_version": 23,
+      "osm_way_last_edited": "2024-07-22T15:42:07Z",
+      "osm_changeset": 154269396
+    },
     "speed_profiles": {
       "walk": {
         "label": "Walk",

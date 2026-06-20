@@ -103,7 +103,6 @@ button {
   box-shadow: 0 1px 0 rgba(23, 32, 29, 0.04);
 }
 
-.search-row,
 .button-row,
 .section-title,
 .toolbar,
@@ -113,14 +112,13 @@ button {
   gap: 8px;
 }
 
-.search-row input {
-  min-width: 0;
-  flex: 1;
-}
-
 .field {
   display: grid;
   gap: 6px;
+  margin-top: 0;
+}
+
+.field + .field {
   margin-top: 12px;
 }
 

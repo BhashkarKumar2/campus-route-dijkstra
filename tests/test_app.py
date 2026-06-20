@@ -29,3 +29,12 @@ def test_route_api_rejects_same_source_and_target():
 
     assert response.status_code == 400
     assert "different" in response.get_json()["error"]
+
+
+def test_place_search_endpoint_is_not_exposed():
+    app = create_app({"TESTING": True})
+    client = app.test_client()
+
+    response = client.get("/api/search?q=Delhi")
+
+    assert response.status_code == 404

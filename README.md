@@ -1,0 +1,104 @@
+# Campus Route Finder with Dijkstra
+
+Python web app for finding the shortest-time route between campus locations. It uses OpenStreetMap tiles for the map, optional Nominatim search for place lookup, and a local campus graph for routing so the Dijkstra algorithm is visible and testable.
+
+The bundled sample is centered on Delhi Technological University. Replace `data/campus_graph.json` with your own college nodes and walking connections before final submission if DTU is not your campus.
+
+## Features
+
+- Flask backend with a readable Dijkstra implementation in `app/dijkstra.py`.
+- Edge costs are computed from node latitude/longitude using the haversine formula.
+- Walking, fast-walking, and cycling speed profiles.
+- Leaflet map with OpenStreetMap tiles and visible attribution.
+- Route summary with time, distance, stops, and per-edge steps.
+- Dijkstra trace showing settled nodes and relaxed distances.
+- Node Builder for collecting coordinates from map clicks.
+- Nominatim-powered place search with a server-side user agent and 1 request per second throttle.
+- Render, Vercel, and Procfile deployment metadata.
+
+## Run locally
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt -r requirements-dev.txt
+python wsgi.py
+```
+
+Open `http://127.0.0.1:5000`.
+
+## Test
+
+```powershell
+pytest
+```
+
+## Customize for your college
+
+Edit `data/campus_graph.json`.
+
+Each node needs:
+
+```json
+{
+  "id": "library",
+  "name": "Central Library",
+  "lat": 28.7506425,
+  "lng": 77.1165275,
+  "category": "academic"
+}
+```
+
+Each edge connects two nodes:
+
+```json
+{
+  "from": "main_gate",
+  "to": "library",
+  "label": "Main walkway",
+  "walk_factor": 1.0
+}
+```
+
+If `distance_m` is omitted, the app computes distance from coordinates. Increase `walk_factor` for crowded, steep, or slow paths.
+
+You can collect coordinates in two ways:
+
+1. Use the Node Builder pin button in the UI and click on the map.
+2. Use Nominatim from the command line:
+
+```powershell
+python scripts/geocode_locations.py "Your College Library" "Your College Main Gate"
+```
+
+## Dijkstra explanation
+
+The algorithm keeps three main structures:
+
+- `distances`: best known time from the source to each node.
+- `previous`: predecessor map used to reconstruct the route.
+- `heap`: priority queue that always selects the unsettled node with the smallest known time.
+
+For every selected node, the algorithm relaxes its outgoing edges. A relaxation updates a neighbor when the new route time is smaller than its current best known time. When the destination is settled, the shortest-time path is complete.
+
+## Deployment
+
+Render:
+
+- Build command: `pip install -r requirements.txt`
+- Start command: `gunicorn wsgi:app`
+- `render.yaml` is included.
+
+Vercel:
+
+- `api/index.py` and `vercel.json` are included for a serverless Flask deployment.
+- Keep the graph file read-only in production. Make graph edits locally and redeploy.
+
+## Free map services used
+
+- Leaflet: browser map rendering. See https://leafletjs.com/examples/quick-start/
+- OpenStreetMap public tile server: map tiles for a small student demo. See https://operations.osmfoundation.org/policies/tiles/
+- Nominatim: optional geocoding search. See https://operations.osmfoundation.org/policies/nominatim/
+- Overpass API: used once to seed the sample DTU coordinates. See https://wiki.openstreetmap.org/wiki/Overpass_API
+
+For production or heavy usage, use a hosted map provider plan or self-host the relevant OpenStreetMap services. Public OpenStreetMap services have usage policies and attribution requirements.

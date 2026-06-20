@@ -1,0 +1,376 @@
+{
+  "metadata": {
+    "campus_name": "Delhi Technological University sample",
+    "center": {
+      "lat": 28.7508153,
+      "lng": 77.1162765
+    },
+    "zoom": 16,
+    "source_note": "Node coordinates are based on OpenStreetMap data retrieved through Nominatim and Overpass on 2026-06-20. Edit this file for your actual college before final submission.",
+    "speed_profiles": {
+      "walk": {
+        "label": "Walk",
+        "speed_m_per_min": 80
+      },
+      "fast_walk": {
+        "label": "Fast walk",
+        "speed_m_per_min": 95
+      },
+      "cycle": {
+        "label": "Cycle",
+        "speed_m_per_min": 180
+      }
+    }
+  },
+  "nodes": [
+    {
+      "id": "dtu_entrance",
+      "name": "DTU Entrance",
+      "lat": 28.7456294,
+      "lng": 77.1170734,
+      "category": "landmark"
+    },
+    {
+      "id": "delhi_school_management",
+      "name": "Delhi School of Management",
+      "lat": 28.7470721,
+      "lng": 77.1169664,
+      "category": "academic"
+    },
+    {
+      "id": "post_office",
+      "name": "DCE Post Office",
+      "lat": 28.7465512,
+      "lng": 77.1185477,
+      "category": "service"
+    },
+    {
+      "id": "sbi",
+      "name": "State Bank of India",
+      "lat": 28.7474738,
+      "lng": 77.1194361,
+      "category": "service"
+    },
+    {
+      "id": "parking",
+      "name": "DCE Parking",
+      "lat": 28.7485229,
+      "lng": 77.1165241,
+      "category": "service"
+    },
+    {
+      "id": "admin_block",
+      "name": "Admin Block",
+      "lat": 28.7497774,
+      "lng": 77.1162284,
+      "category": "academic"
+    },
+    {
+      "id": "ambedkar_auditorium",
+      "name": "Dr BR Ambedkar Auditorium",
+      "lat": 28.7502161,
+      "lng": 77.1163772,
+      "category": "academic"
+    },
+    {
+      "id": "dtu_library",
+      "name": "DTU Library",
+      "lat": 28.7506425,
+      "lng": 77.1165275,
+      "category": "academic"
+    },
+    {
+      "id": "nescafe",
+      "name": "Nescafe",
+      "lat": 28.7496454,
+      "lng": 77.1167453,
+      "category": "food"
+    },
+    {
+      "id": "open_air_theatre",
+      "name": "Open Air Theatre",
+      "lat": 28.7498901,
+      "lng": 77.1174762,
+      "category": "landmark"
+    },
+    {
+      "id": "science_block",
+      "name": "Science Block",
+      "lat": 28.7510421,
+      "lng": 77.1177325,
+      "category": "academic"
+    },
+    {
+      "id": "sps_classrooms",
+      "name": "SPS Classrooms",
+      "lat": 28.7516849,
+      "lng": 77.1185629,
+      "category": "academic"
+    },
+    {
+      "id": "mechanical_department",
+      "name": "Department of Mechanical Engineering",
+      "lat": 28.7499794,
+      "lng": 77.1186818,
+      "category": "academic"
+    },
+    {
+      "id": "dtu_canteen",
+      "name": "DTU Canteen",
+      "lat": 28.7492984,
+      "lng": 77.1187957,
+      "category": "food"
+    },
+    {
+      "id": "pragya_bhawan",
+      "name": "Pragya Bhawan",
+      "lat": 28.749067,
+      "lng": 77.1205169,
+      "category": "academic"
+    },
+    {
+      "id": "dtu_lake",
+      "name": "DTU Lake",
+      "lat": 28.7496177,
+      "lng": 77.1130018,
+      "category": "landmark"
+    },
+    {
+      "id": "apj_hostel",
+      "name": "APJ Hostel",
+      "lat": 28.7505847,
+      "lng": 77.1119822,
+      "category": "hostel"
+    },
+    {
+      "id": "hjb_hostel",
+      "name": "HJB Hostel",
+      "lat": 28.7510459,
+      "lng": 77.1135699,
+      "category": "hostel"
+    },
+    {
+      "id": "mini_park",
+      "name": "Mini Park",
+      "lat": 28.751527,
+      "lng": 77.1135776,
+      "category": "landmark"
+    },
+    {
+      "id": "raj_soin_hall",
+      "name": "Raj Soin Hall",
+      "lat": 28.7508662,
+      "lng": 77.1144233,
+      "category": "academic"
+    },
+    {
+      "id": "vvs_hostel",
+      "name": "VVS Hostel",
+      "lat": 28.7515394,
+      "lng": 77.1141141,
+      "category": "hostel"
+    },
+    {
+      "id": "cvr_hostel",
+      "name": "CVR Hostel",
+      "lat": 28.7526399,
+      "lng": 77.1141795,
+      "category": "hostel"
+    },
+    {
+      "id": "monkey_bridge",
+      "name": "Monkey Bridge",
+      "lat": 28.7527228,
+      "lng": 77.1147531,
+      "category": "landmark"
+    },
+    {
+      "id": "sports_complex",
+      "name": "DTU Sports Complex",
+      "lat": 28.7528887,
+      "lng": 77.1159305,
+      "category": "sports"
+    },
+    {
+      "id": "gymnasium",
+      "name": "DTU Gymnasium",
+      "lat": 28.7536022,
+      "lng": 77.1151878,
+      "category": "sports"
+    },
+    {
+      "id": "badminton_court",
+      "name": "Indoor Badminton Court",
+      "lat": 28.7534559,
+      "lng": 77.1173057,
+      "category": "sports"
+    }
+  ],
+  "edges": [
+    {
+      "from": "dtu_entrance",
+      "to": "delhi_school_management",
+      "label": "Main entrance walk"
+    },
+    {
+      "from": "dtu_entrance",
+      "to": "post_office",
+      "label": "Gate service lane",
+      "walk_factor": 1.05
+    },
+    {
+      "from": "delhi_school_management",
+      "to": "parking",
+      "label": "Central pedestrian spine"
+    },
+    {
+      "from": "post_office",
+      "to": "sbi",
+      "label": "Service lane"
+    },
+    {
+      "from": "sbi",
+      "to": "dtu_canteen",
+      "label": "Canteen approach",
+      "walk_factor": 1.1
+    },
+    {
+      "from": "sbi",
+      "to": "pragya_bhawan",
+      "label": "Mall Road"
+    },
+    {
+      "from": "parking",
+      "to": "admin_block",
+      "label": "Admin approach"
+    },
+    {
+      "from": "parking",
+      "to": "nescafe",
+      "label": "Cafe connector"
+    },
+    {
+      "from": "admin_block",
+      "to": "ambedkar_auditorium",
+      "label": "Admin to auditorium"
+    },
+    {
+      "from": "ambedkar_auditorium",
+      "to": "dtu_library",
+      "label": "Library approach"
+    },
+    {
+      "from": "ambedkar_auditorium",
+      "to": "nescafe",
+      "label": "Auditorium cafe connector"
+    },
+    {
+      "from": "nescafe",
+      "to": "open_air_theatre",
+      "label": "Cafe to OAT"
+    },
+    {
+      "from": "open_air_theatre",
+      "to": "science_block",
+      "label": "OAT academic walkway"
+    },
+    {
+      "from": "open_air_theatre",
+      "to": "mechanical_department",
+      "label": "OAT to Mechanical"
+    },
+    {
+      "from": "science_block",
+      "to": "dtu_library",
+      "label": "Science Library connector"
+    },
+    {
+      "from": "science_block",
+      "to": "sps_classrooms",
+      "label": "Science to SPS"
+    },
+    {
+      "from": "sps_classrooms",
+      "to": "mechanical_department",
+      "label": "SPS Mechanical connector"
+    },
+    {
+      "from": "mechanical_department",
+      "to": "dtu_canteen",
+      "label": "Mechanical Canteen connector"
+    },
+    {
+      "from": "mechanical_department",
+      "to": "pragya_bhawan",
+      "label": "Mechanical to Pragya"
+    },
+    {
+      "from": "admin_block",
+      "to": "dtu_lake",
+      "label": "Lake side path",
+      "walk_factor": 1.15
+    },
+    {
+      "from": "dtu_lake",
+      "to": "apj_hostel",
+      "label": "Lake hostel path"
+    },
+    {
+      "from": "dtu_lake",
+      "to": "hjb_hostel",
+      "label": "Yamuna Marg access"
+    },
+    {
+      "from": "hjb_hostel",
+      "to": "mini_park",
+      "label": "Hostel park path"
+    },
+    {
+      "from": "mini_park",
+      "to": "vvs_hostel",
+      "label": "Hostel loop"
+    },
+    {
+      "from": "vvs_hostel",
+      "to": "raj_soin_hall",
+      "label": "Raj Soin connector"
+    },
+    {
+      "from": "raj_soin_hall",
+      "to": "dtu_library",
+      "label": "Academic west path"
+    },
+    {
+      "from": "mini_park",
+      "to": "cvr_hostel",
+      "label": "Hostel sports path"
+    },
+    {
+      "from": "cvr_hostel",
+      "to": "monkey_bridge",
+      "label": "Foot bridge",
+      "walk_factor": 1.2
+    },
+    {
+      "from": "monkey_bridge",
+      "to": "sports_complex",
+      "label": "Sports approach"
+    },
+    {
+      "from": "sports_complex",
+      "to": "gymnasium",
+      "label": "Gym connector"
+    },
+    {
+      "from": "sports_complex",
+      "to": "badminton_court",
+      "label": "Court connector"
+    },
+    {
+      "from": "badminton_court",
+      "to": "sps_classrooms",
+      "label": "Sports to SPS",
+      "walk_factor": 1.1
+    }
+  ]
+}

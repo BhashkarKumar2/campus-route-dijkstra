@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: campus-route-dijkstra
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn wsgi:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.4
+      - key: NOMINATIM_USER_AGENT
+        value: CampusRouteDijkstra/1.0 student-project render-demo

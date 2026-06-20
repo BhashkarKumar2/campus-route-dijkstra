@@ -20,6 +20,11 @@
       "osm_way_last_edited": "2024-07-22T15:42:07Z",
       "osm_changeset": 154269396
     },
+    "official_map_source": {
+      "title": "Delhi Technological University Campus MAP",
+      "source": "DTU Annual Report 2023-24, page 2",
+      "url": "https://iqac.dtu.ac.in/ar/pdf/ar23-24_english.pdf"
+    },
     "speed_profiles": {
       "walk": {
         "label": "Walk",
@@ -38,17 +43,19 @@
   "nodes": [
     {
       "id": "dtu_entrance",
-      "name": "DTU Entrance",
+      "name": "Main Gate Entry / Exit",
       "lat": 28.7456294,
       "lng": 77.1170734,
-      "category": "landmark"
+      "category": "landmark",
+      "official_map_no": "1"
     },
     {
       "id": "delhi_school_management",
       "name": "Delhi School of Management",
       "lat": 28.7470721,
       "lng": 77.1169664,
-      "category": "academic"
+      "category": "academic",
+      "official_map_no": "2"
     },
     {
       "id": "post_office",
@@ -59,10 +66,11 @@
     },
     {
       "id": "sbi",
-      "name": "State Bank of India",
+      "name": "State Bank of India (SBI)",
       "lat": 28.7474738,
       "lng": 77.1194361,
-      "category": "service"
+      "category": "service",
+      "official_map_no": "27"
     },
     {
       "id": "parking",
@@ -73,24 +81,27 @@
     },
     {
       "id": "admin_block",
-      "name": "Admin Block",
+      "name": "Administrative Building",
       "lat": 28.7497774,
       "lng": 77.1162284,
-      "category": "academic"
+      "category": "academic",
+      "official_map_no": "3"
     },
     {
       "id": "ambedkar_auditorium",
-      "name": "Dr BR Ambedkar Auditorium",
+      "name": "Dr. B. R. Ambedkar Auditorium",
       "lat": 28.7502161,
       "lng": 77.1163772,
-      "category": "academic"
+      "category": "academic",
+      "official_map_no": "14"
     },
     {
       "id": "dtu_library",
-      "name": "DTU Library",
+      "name": "Central Library",
       "lat": 28.7506425,
       "lng": 77.1165275,
-      "category": "academic"
+      "category": "academic",
+      "official_map_no": "13"
     },
     {
       "id": "nescafe",
@@ -101,66 +112,75 @@
     },
     {
       "id": "open_air_theatre",
-      "name": "Open Air Theatre",
+      "name": "Open Air Theater",
       "lat": 28.7498901,
       "lng": 77.1174762,
-      "category": "landmark"
+      "category": "landmark",
+      "official_map_no": "16"
     },
     {
       "id": "science_block",
       "name": "Science Block",
       "lat": 28.7510421,
       "lng": 77.1177325,
-      "category": "academic"
+      "category": "academic",
+      "official_map_no": "4/5/6/7/9/10/11"
     },
     {
       "id": "sps_classrooms",
       "name": "SPS Classrooms",
       "lat": 28.7516849,
       "lng": 77.1185629,
-      "category": "academic"
+      "category": "academic",
+      "official_map_no": "4/5/6/7/9/10/11"
     },
     {
       "id": "mechanical_department",
       "name": "Department of Mechanical Engineering",
       "lat": 28.7499794,
       "lng": 77.1186818,
-      "category": "academic"
+      "category": "academic",
+      "official_map_no": "4/5/6/7/9/10/11"
     },
     {
       "id": "dtu_canteen",
-      "name": "DTU Canteen",
+      "name": "Main Canteen of DTU Campus",
       "lat": 28.7492984,
       "lng": 77.1187957,
-      "category": "food"
+      "category": "food",
+      "official_map_no": "8"
     },
     {
       "id": "pragya_bhawan",
-      "name": "Pragya Bhawan",
+      "name": "Pragyan Bhawan",
       "lat": 28.749067,
       "lng": 77.1205169,
-      "category": "academic"
+      "category": "academic",
+      "official_map_no": "24"
     },
     {
       "id": "dtu_lake",
-      "name": "DTU Lake",
+      "name": "Pond",
       "lat": 28.7496177,
       "lng": 77.1130018,
-      "category": "landmark"
+      "category": "landmark",
+      "official_map_no": "19"
     },
     {
       "id": "apj_hostel",
-      "name": "APJ Hostel",
+      "name": "Dr. A.P.J. Abdul Kalam Hostel",
       "lat": 28.7505847,
       "lng": 77.1119822,
-      "category": "hostel"
+      "category": "hostel",
+      "official_map_no": "20"
     },
     {
       "id": "hjb_hostel",
       "name": "HJB Hostel",
       "lat": 28.7510459,
       "lng": 77.1135699,
-      "category": "hostel"
+      "category": "hostel",
+      "official_map_no": "21/22"
     },
     {
       "id": "mini_park",
@@ -181,14 +201,16 @@
       "name": "VVS Hostel",
       "lat": 28.7515394,
       "lng": 77.1141141,
-      "category": "hostel"
+      "category": "hostel",
+      "official_map_no": "21/22"
     },
     {
       "id": "cvr_hostel",
       "name": "CVR Hostel",
       "lat": 28.7526399,
       "lng": 77.1141795,
-      "category": "hostel"
+      "category": "hostel",
+      "official_map_no": "21/22"
     },
     {
       "id": "monkey_bridge",
@@ -199,10 +221,11 @@
     },
     {
       "id": "sports_complex",
-      "name": "DTU Sports Complex",
+      "name": "Sports Complex",
       "lat": 28.7528887,
       "lng": 77.1159305,
-      "category": "sports"
+      "category": "sports",
+      "official_map_no": "23"
     },
     {
       "id": "gymnasium",

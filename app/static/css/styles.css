@@ -340,6 +340,27 @@ button:focus-visible {
   overflow-wrap: anywhere;
 }
 
+.text-link {
+  color: var(--accent-dark);
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.official-map-image {
+  display: block;
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  border: 1px solid #e0e6e1;
+  border-radius: 8px;
+  background: #e9f3f8;
+}
+
 .map-area {
   position: relative;
   min-width: 0;

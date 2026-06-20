@@ -89,7 +89,10 @@ function drawMarkers() {
     });
 
     const category = categoryLabels[node.category] || "Place";
-    marker.bindPopup(`<strong>${escapeHtml(node.name)}</strong><br>${category}<br>${node.lat.toFixed(6)}, ${node.lng.toFixed(6)}`);
+    const officialRef = node.official_map_no
+      ? `<br>Official map #${escapeHtml(node.official_map_no)}`
+      : "";
+    marker.bindPopup(`<strong>${escapeHtml(node.name)}</strong><br>${category}${officialRef}<br>${node.lat.toFixed(6)}, ${node.lng.toFixed(6)}`);
     marker.addTo(state.map);
     state.markers.set(node.id, marker);
   }

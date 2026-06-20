@@ -4,6 +4,8 @@ Python web app for finding the shortest-time route between DTU campus locations.
 
 The bundled sample is centered on Delhi Technological University and the map is locked to the DTU campus bounding box.
 
+Official DTU campus map reference: `app/static/img/dtu-official-campus-map.png`, extracted from DTU Annual Report 2023-24 page 2.
+
 ## Features
 
 - Flask backend with a readable Dijkstra implementation in `app/dijkstra.py`.
@@ -11,6 +13,8 @@ The bundled sample is centered on Delhi Technological University and the map is 
 - Walking, fast-walking, and cycling speed profiles.
 - Leaflet map with OpenStreetMap tiles and visible attribution.
 - Map panning is constrained to the DTU campus area.
+- Official DTU campus map reference is shown inside the app.
+- Marker popups show official DTU campus map numbers where a location can be matched confidently.
 - Route summary with time, distance, stops, and per-edge steps.
 - Dijkstra trace showing settled nodes and relaxed distances.
 - Node Builder for collecting coordinates from map clicks.
@@ -78,6 +82,11 @@ Latest map audit:
 
 This means the OpenStreetMap service queried by the project was current on June 20, 2026, but the main DTU campus boundary feature itself has not been edited since July 22, 2024. If some buildings, paths, or labels look old, update those OpenStreetMap features or adjust `data/campus_graph.json` manually for the project demo.
 
+Official DTU map source:
+
+- DTU Annual Report 2023-24, page 2: https://iqac.dtu.ac.in/ar/pdf/ar23-24_english.pdf
+- DTU website Campus Map page: https://dtu.ac.in/Web/About/campusmap.php
+
 ## Dijkstra explanation
 
 The algorithm keeps three main structures:
@@ -107,5 +116,6 @@ Vercel:
 - OpenStreetMap public tile server: map tiles for a small student demo. See https://operations.osmfoundation.org/policies/tiles/
 - Overpass API: used once to seed the sample DTU coordinates. See https://wiki.openstreetmap.org/wiki/Overpass_API
 - OSM API: used to audit the DTU campus way metadata. See https://api.openstreetmap.org/api/0.6/way/111212532.json
+- DTU official annual report: used as the campus-map label reference. See https://iqac.dtu.ac.in/ar/pdf/ar23-24_english.pdf
 
 For production or heavy usage, use a hosted map provider plan or self-host the relevant OpenStreetMap services. Public OpenStreetMap services have usage policies and attribution requirements.

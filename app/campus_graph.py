@@ -18,6 +18,7 @@ class Node:
     lat: float
     lng: float
     category: str = "place"
+    official_map_no: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -26,6 +27,7 @@ class Node:
             "lat": self.lat,
             "lng": self.lng,
             "category": self.category,
+            "official_map_no": self.official_map_no,
         }
 
 
@@ -83,6 +85,7 @@ class CampusGraph:
                 lat=float(raw["lat"]),
                 lng=float(raw["lng"]),
                 category=raw.get("category", "place"),
+                official_map_no=raw.get("official_map_no"),
             )
             if node.id in nodes:
                 raise GraphError(f"Duplicate node id: {node.id}")

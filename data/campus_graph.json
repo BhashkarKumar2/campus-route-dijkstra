@@ -88,6 +88,30 @@
       "official_map_no": "3"
     },
     {
+      "id": "new_academic_block_17a",
+      "name": "Newly Constructed Academic Block 17A",
+      "lat": 28.7487063,
+      "lng": 77.1148258,
+      "category": "academic",
+      "official_map_no": "17A"
+    },
+    {
+      "id": "new_academic_block_17b",
+      "name": "Newly Constructed Academic Block 17B",
+      "lat": 28.7483121,
+      "lng": 77.1147921,
+      "category": "academic",
+      "official_map_no": "17B"
+    },
+    {
+      "id": "department_design",
+      "name": "Department of Design",
+      "lat": 28.7509301,
+      "lng": 77.1157235,
+      "category": "academic",
+      "official_map_no": "12"
+    },
+    {
       "id": "ambedkar_auditorium",
       "name": "Dr. B. R. Ambedkar Auditorium",
       "lat": 28.7502161,
@@ -102,6 +126,14 @@
       "lng": 77.1165275,
       "category": "academic",
       "official_map_no": "13"
+    },
+    {
+      "id": "computer_centre",
+      "name": "Computer Centre",
+      "lat": 28.7502434,
+      "lng": 77.1172313,
+      "category": "academic",
+      "official_map_no": "15"
     },
     {
       "id": "nescafe",
@@ -119,28 +151,36 @@
       "official_map_no": "16"
     },
     {
+      "id": "academic_department_4_7",
+      "name": "Academic Department Block 4-7",
+      "lat": 28.7489875,
+      "lng": 77.1176428,
+      "category": "academic",
+      "official_map_no": "4/5/6/7"
+    },
+    {
       "id": "science_block",
-      "name": "Science Block",
+      "name": "Academic Department Block 10 / Science Block",
       "lat": 28.7510421,
       "lng": 77.1177325,
       "category": "academic",
-      "official_map_no": "4/5/6/7/9/10/11"
+      "official_map_no": "10"
     },
     {
       "id": "sps_classrooms",
-      "name": "SPS Classrooms",
+      "name": "Academic Department Block 11 / SPS Classrooms",
       "lat": 28.7516849,
       "lng": 77.1185629,
       "category": "academic",
-      "official_map_no": "4/5/6/7/9/10/11"
+      "official_map_no": "11"
     },
     {
       "id": "mechanical_department",
-      "name": "Department of Mechanical Engineering",
+      "name": "Academic Department Block 9 / Mechanical Engineering",
       "lat": 28.7499794,
       "lng": 77.1186818,
       "category": "academic",
-      "official_map_no": "4/5/6/7/9/10/11"
+      "official_map_no": "9"
     },
     {
       "id": "dtu_canteen",
@@ -194,7 +234,8 @@
       "name": "Raj Soin Hall",
       "lat": 28.7508662,
       "lng": 77.1144233,
-      "category": "academic"
+      "category": "academic",
+      "official_map_no": "18"
     },
     {
       "id": "vvs_hostel",
@@ -240,6 +281,14 @@
       "lat": 28.7534559,
       "lng": 77.1173057,
       "category": "sports"
+    },
+    {
+      "id": "virangana_laxmi_bai_hostel",
+      "name": "Virangana Laxmi Bai Hostel",
+      "lat": 28.7477604,
+      "lng": 77.1182127,
+      "category": "hostel",
+      "official_map_no": "25"
     }
   ],
   "edges": [
@@ -282,8 +331,28 @@
     },
     {
       "from": "parking",
+      "to": "new_academic_block_17b",
+      "label": "Parking to new academic block"
+    },
+    {
+      "from": "parking",
       "to": "nescafe",
       "label": "Cafe connector"
+    },
+    {
+      "from": "admin_block",
+      "to": "new_academic_block_17a",
+      "label": "Admin to new academic block 17A"
+    },
+    {
+      "from": "new_academic_block_17a",
+      "to": "new_academic_block_17b",
+      "label": "New academic block connector"
+    },
+    {
+      "from": "new_academic_block_17a",
+      "to": "dtu_lake",
+      "label": "New block lake connector"
     },
     {
       "from": "admin_block",
@@ -291,9 +360,24 @@
       "label": "Admin to auditorium"
     },
     {
+      "from": "admin_block",
+      "to": "department_design",
+      "label": "Admin to Department of Design"
+    },
+    {
       "from": "ambedkar_auditorium",
       "to": "dtu_library",
       "label": "Library approach"
+    },
+    {
+      "from": "department_design",
+      "to": "dtu_library",
+      "label": "Design Library connector"
+    },
+    {
+      "from": "department_design",
+      "to": "raj_soin_hall",
+      "label": "Design Raj Soin connector"
     },
     {
       "from": "ambedkar_auditorium",
@@ -301,9 +385,34 @@
       "label": "Auditorium cafe connector"
     },
     {
+      "from": "dtu_library",
+      "to": "computer_centre",
+      "label": "Library Computer Centre connector"
+    },
+    {
       "from": "nescafe",
       "to": "open_air_theatre",
       "label": "Cafe to OAT"
+    },
+    {
+      "from": "open_air_theatre",
+      "to": "computer_centre",
+      "label": "OAT Computer Centre connector"
+    },
+    {
+      "from": "computer_centre",
+      "to": "academic_department_4_7",
+      "label": "Computer Centre academic connector"
+    },
+    {
+      "from": "academic_department_4_7",
+      "to": "open_air_theatre",
+      "label": "Academic block 4-7 OAT connector"
+    },
+    {
+      "from": "academic_department_4_7",
+      "to": "dtu_canteen",
+      "label": "Academic block 4-7 canteen connector"
     },
     {
       "from": "open_air_theatre",
@@ -339,6 +448,16 @@
       "from": "mechanical_department",
       "to": "pragya_bhawan",
       "label": "Mechanical to Pragya"
+    },
+    {
+      "from": "sbi",
+      "to": "virangana_laxmi_bai_hostel",
+      "label": "SBI to Virangana Hostel"
+    },
+    {
+      "from": "virangana_laxmi_bai_hostel",
+      "to": "dtu_canteen",
+      "label": "Virangana Hostel to canteen"
     },
     {
       "from": "admin_block",

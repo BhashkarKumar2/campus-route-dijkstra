@@ -20,6 +20,19 @@ Official DTU campus map reference: `app/static/img/dtu-official-campus-map.png`,
 - Node Builder for collecting coordinates from map clicks.
 - Render, Vercel, and Procfile deployment metadata.
 
+## Official Map Nodes Added
+
+- `12` Department of Design
+- `15` Computer Centre
+- `17A` Newly Constructed Academic Block 17A
+- `17B` Newly Constructed Academic Block 17B
+- `4/5/6/7` Academic Department Block 4-7
+- `9` Academic Department Block 9 / Mechanical Engineering
+- `10` Academic Department Block 10 / Science Block
+- `11` Academic Department Block 11 / SPS Classrooms
+- `18` Raj Soin Hall
+- `25` Virangana Laxmi Bai Hostel
+
 ## Run locally
 
 ```powershell

@@ -6,6 +6,8 @@ The bundled sample is centered on Delhi Technological University and the map is 
 
 Official DTU campus map reference: `app/static/img/dtu-official-campus-map.png`, extracted from DTU Annual Report 2023-24 page 2.
 
+Coordinate audit: `docs/coordinate-audit.md`.
+
 ## Features
 
 - Flask backend with a readable Dijkstra implementation in `app/dijkstra.py`.
